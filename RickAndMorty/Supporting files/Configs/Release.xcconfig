@@ -1,0 +1,10 @@
+//
+//  Release.xcconfig
+//  RickAndMorty
+//
+//  Created by Damir Akbarov on 21.08.2023.
+//
+
+#include "Pods/Target Support Files/Pods-RickAndMorty/Pods-RickAndMorty.release.xcconfig"
+
+APPLICATION_BASE_URL = rickandmortyapi.com
