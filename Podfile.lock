@@ -1,0 +1,33 @@
+PODS:
+  - SnapKit (5.0.1)
+  - SwiftLint (0.52.2)
+  - SwiftyBeaver (2.0.0)
+  - Swinject (2.8.3)
+  - SwinjectAutoregistration (2.8.3):
+    - Swinject (~> 2.8.3)
+
+DEPENDENCIES:
+  - SnapKit (~> 5.0.0)
+  - SwiftLint
+  - SwiftyBeaver
+  - Swinject
+  - SwinjectAutoregistration
+
+SPEC REPOS:
+  trunk:
+    - SnapKit
+    - SwiftLint
+    - SwiftyBeaver
+    - Swinject
+    - SwinjectAutoregistration
+
+SPEC CHECKSUMS:
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  SwiftLint: 1ac76dac888ca05cb0cf24d0c85887ec1209961d
+  SwiftyBeaver: 014b0c12065026b731bac80305294f27d63e27f6
+  Swinject: 893c9a543000ac2f10ee4cbaf0933c6992c935d5
+  SwinjectAutoregistration: e3ee378dc458acf78d176fc7fec3902603452667
+
+PODFILE CHECKSUM: 65dc63f2f209184955f0f3e0c01187b6f31126d0
+
+COCOAPODS: 1.12.1
