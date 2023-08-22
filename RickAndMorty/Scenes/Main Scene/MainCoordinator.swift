@@ -21,16 +21,8 @@ final class MainCoordinator: BaseCoordinator {
         setViewControllers([viewController], animated: true)
     }
     
+    // TODO: Make Character SwiftUI View
     private func showCharacter(_ character: Result) {
-//        let viewController = LoginViewController()
-//        viewController.onEvent = { [weak self] event in
-//            switch event {
-//            case .didLogin:
-//                self?.onFinish()
-//            case .showRegistrationFillFlow:
-//                self?.showRegistrationFillFlow()
-//            }
-//        }
-//        push(viewController)
+        print(character)
     }
 }

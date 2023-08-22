@@ -72,6 +72,7 @@
 		F6B054242A93FF44000283EE /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B054232A93FF44000283EE /* MainCoordinator.swift */; };
 		F6B054262A940D7B000283EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6B054252A940D7B000283EE /* LaunchScreen.storyboard */; };
 		F6B054282A940E87000283EE /* SelfSizingCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B054272A940E87000283EE /* SelfSizingCollectionView.swift */; };
+		F6B0542A2A947747000283EE /* UIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B054292A947747000283EE /* UIImageView+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -146,6 +147,7 @@
 		F6B054232A93FF44000283EE /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		F6B054252A940D7B000283EE /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F6B054272A940E87000283EE /* SelfSizingCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfSizingCollectionView.swift; sourceTree = "<group>"; };
+		F6B054292A947747000283EE /* UIImageView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -314,6 +316,7 @@
 				F6B054192A93E63E000283EE /* Completion+Ext.swift */,
 				F6B0541B2A93EBBE000283EE /* UICollectionViewCell+Ext.swift */,
 				F6B0541F2A93F383000283EE /* UIView+Ext.swift */,
+				F6B054292A947747000283EE /* UIImageView+Ext.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -710,6 +713,7 @@
 				F6B053BF2A92B88D000283EE /* RequestProtocol.swift in Sources */,
 				F6B054052A93D45D000283EE /* Status.swift in Sources */,
 				F6B0539B2A92A1D2000283EE /* NetworkModule.swift in Sources */,
+				F6B0542A2A947747000283EE /* UIImageView+Ext.swift in Sources */,
 				F6B053F22A93D2AB000283EE /* ResultWrapperDto.swift in Sources */,
 				F6B053992A92A1CB000283EE /* ServiceModule.swift in Sources */,
 			);

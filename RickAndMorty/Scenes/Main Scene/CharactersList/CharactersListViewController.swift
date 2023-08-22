@@ -13,10 +13,11 @@ final class CharactersListViewController: MvvmViewController<CharactersListViewM
     // MARK: - Views
     private lazy var flowLayout: UICollectionViewFlowLayout = {
         let layout = UICollectionViewFlowLayout()
-        layout.minimumInteritemSpacing = 16
-        layout.minimumLineSpacing = 16
+        layout.minimumInteritemSpacing = grid.itemSpacing
+        layout.minimumLineSpacing = grid.itemSpacing
         layout.scrollDirection = .vertical
-        layout.sectionInset = UIEdgeInsets(top: 30, left: 20, bottom: 30, right: 20)
+        layout.sectionInset = UIEdgeInsets(top: grid.verticalPadding, left: grid.sidePadding,
+                                           bottom: grid.verticalPadding, right: grid.sidePadding)
         return layout
     }()
     
@@ -114,10 +115,11 @@ extension CharactersListViewController: UICollectionViewDelegateFlowLayout {
         let width = collectionView.bounds.width
         let numberOfItemsPerRow: CGFloat = 2
         let spacing: CGFloat = flowLayout.minimumInteritemSpacing
-        let sideSpacing: CGFloat = 20
+        let sideSpacing: CGFloat = grid.sidePadding
         let availableWidth = width - spacing * (numberOfItemsPerRow - 1) - sideSpacing * numberOfItemsPerRow
-        let itemDimension = floor(availableWidth / numberOfItemsPerRow)
-        return CGSize(width: itemDimension, height: 202)
+        let itemWidth = floor(availableWidth / numberOfItemsPerRow)
+        let itemHeight = itemWidth * 4 / 3
+        return CGSize(width: itemWidth, height: itemHeight)
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
@@ -127,7 +129,8 @@ extension CharactersListViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        let item = viewModel.getItem(by: indexPath)
+        viewModel.showCharacter(by: item.id)
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
@@ -142,4 +145,10 @@ private extension AppearanceConstants {
     var background: UIColor { colors.background }
     var gray: UIColor { .secondaryLabel }
     var emptyFont: UIFont { fonts.normalMedium }
+}
+
+private extension GridConstants {
+    var sidePadding: CGFloat { 20 }
+    var verticalPadding: CGFloat { 30 }
+    var itemSpacing: CGFloat { 16 }
 }

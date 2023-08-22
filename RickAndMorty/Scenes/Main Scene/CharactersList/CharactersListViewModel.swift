@@ -64,11 +64,17 @@ final class CharactersListViewModel: ViewModel {
     func resetPage() {
         totalPages.value = 2
         page.value = 1
+        characters.value = []
+        charactersData.value = []
     }
     
     func showCharacter(by id: Int) {
         guard let character = characters.value.first(where: { $0.id == id }) else { return }
         showCharacterCommand.call(character)
+    }
+    
+    func getItem(by indexPath: IndexPath) -> ResultItem {
+        return charactersData.value[indexPath.row]
     }
     
     // MARK: - Private methods

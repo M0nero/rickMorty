@@ -13,7 +13,7 @@ final class CharacterCell: UICollectionViewCell {
         let imageView = UIImageView()
         imageView.layer.cornerRadius = grid.imageRadius
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
         return imageView
     }()
@@ -81,7 +81,8 @@ extension CharacterCell {
         }
         
         rootStack.snp.makeConstraints {
-            $0.edges.equalToSuperview().inset(grid.padding)
+            $0.top.left.right.equalToSuperview().inset(grid.padding)
+            $0.bottom.equalToSuperview()
         }
         
         imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor).isActive = true
@@ -99,26 +100,4 @@ private extension GridConstants {
     var cellRadius: CGFloat { 16 }
     var imageRadius: CGFloat { 10 }
     var padding: CGFloat { 8 }
-}
-
-extension UIImageView {
-    func downloaded(from url: URL, contentMode mode: ContentMode = .scaleAspectFit) {
-        contentMode = mode
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            guard
-                let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
-                let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
-                let data = data, error == nil,
-                let image = UIImage(data: data)
-                else { return }
-            DispatchQueue.main.async { [weak self] in
-                self?.image = image
-            }
-        }.resume()
-    }
-    
-    func downloaded(from link: String, contentMode mode: ContentMode = .scaleAspectFit) {
-        guard let url = URL(string: link) else { return }
-        downloaded(from: url, contentMode: mode)
-    }
 }
